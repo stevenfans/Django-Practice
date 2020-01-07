@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 # Create your views here.
-
+#need to work on views and add css
 #always pass in request
 def index(request):
     template = loader.get_template('roulette/index.html')
