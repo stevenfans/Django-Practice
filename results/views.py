@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from django.template import loader
 # Create your views here.
 
 #always pass in request
 def index(request):
-    return HttpResponse("<h1>This is the page for the results  page</h1>")
+    #template = loader.get_template('main.html')
+    return render(request,"main.html")
