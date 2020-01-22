@@ -5,8 +5,6 @@ from django.shortcuts import get_list_or_404
 from rest_framework.views import APIView
 from rest_framework import status
 
-
-
 # Create your views here.
 
 #always pass in request
