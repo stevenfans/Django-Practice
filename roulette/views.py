@@ -18,9 +18,11 @@ def index(request):
 
 def process_loc(request):
     template = loader.get_template('roulette/index.html')
-    contex={}
+    context={}
     lat = float(request.GET.get('lat'))
     lon = float(request.GET.get('lon'))
     print('latitdue is', lat)
-    print("FUCK ME, Why do you work????")
+    print('longitude is', lon)
+    print("FUCK ME, Why do you not work????")
     return HttpResponse(template.render(context,request))
+    # return template.render()

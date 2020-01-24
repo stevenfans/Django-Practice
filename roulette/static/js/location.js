@@ -20,13 +20,13 @@ function initMap() {
 
         $.ajax({
           type: "GET",
-         url: 'process_loc', 
+          url: 'process_loc', 
           data: {
             'lat': lat,
             'lon': lon,
           }, 
           datatype: "json",
-          success:function(json){
+          success:function(){
             alert("ajax was a success")
           },
           // error:function(xhr,errmsg,err){
