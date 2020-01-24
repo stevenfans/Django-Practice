@@ -1,11 +1,5 @@
 var map, infoWindow;
 function initMap() {
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     center: {lat: -34.397, lng: 150.644},
-//     zoom: 6
-//   });
-//   infoWindow = new google.maps.InfoWindow;
-
   console.log("before geolocation");
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -15,8 +9,32 @@ function initMap() {
         lng: position.coords.longitude
       };
       console.log("inside the navigator");
-      console.log(pos.lat);
-      console.log(pos.lng);
+      // console.log(pos.lat);
+      // console.log(pos.lng);
+      $(document).ready(function(){
+        var lat = pos.lat; 
+        var lon = pos.lng; 
+        console.log("document is ready");
+        console.log(lat); 
+        console.log(lon);
+
+        $.ajax({
+          type: "GET",
+         url: 'process_loc', 
+          data: {
+            'lat': lat,
+            'lon': lon,
+          }, 
+          datatype: "json",
+          success:function(json){
+            alert("ajax was a success")
+          },
+          // error:function(xhr,errmsg,err){
+          //   alert("Could not send URL to Django. Error: " + xhr.status + ": " + xhr.responseText);
+          // }
+        })
+      });
+      
     });
   } 
 }
