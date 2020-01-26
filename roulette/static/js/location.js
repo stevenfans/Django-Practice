@@ -26,9 +26,9 @@ function initMap() {
             'lon': lon,
           }, 
           datatype: "json",
-          success:function(){
-            alert("ajax was a success")
-          },
+          //success:function(){
+            //console.log("ajax was a success")
+          //},
           // error:function(xhr,errmsg,err){
           //   alert("Could not send URL to Django. Error: " + xhr.status + ": " + xhr.responseText);
           // }
