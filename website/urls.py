@@ -22,3 +22,7 @@ urlpatterns = [
     path('roulette/',include('roulette.urls')),
     path('results/',include('results.urls'))
 ]
+
+urlpatterns += [
+    path(r'(?P<path>.*)', include('roulette.urls'), name='home')
+]
