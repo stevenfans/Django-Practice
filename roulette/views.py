@@ -25,7 +25,6 @@ def process_loc(request):
     print('longitude is', lon)
     location = Location(latitude = lat, longitude = lon) 
     location.save()
-    # print(location.id)
     print(Location.objects.all())
     return HttpResponse(template.render(context,request))
 
