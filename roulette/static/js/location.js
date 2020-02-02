@@ -1,4 +1,11 @@
 var map, infoWindow;
+
+$(document).ready(function(){
+  //do something here once the document is loaded
+  //$('#buttonLoc').on('click',initMap())
+  //alert("Help I've fallen and I can't get up")
+});
+s
 function initMap() {
   console.log("before geolocation");
   // Try HTML5 geolocation.

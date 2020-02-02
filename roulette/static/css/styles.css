@@ -11,6 +11,8 @@ body{
 
 .btn-success{
     font-size: 2em;
+    margin-top: 1em;
+    width: 6em;
 }
 
 .options{
@@ -21,11 +23,15 @@ h1{
     font-size: 50px;
 }
 
+.navs{
+    color: white; 
+}
+
 .navbar-expand-lg{
     height: 75px;
 }
 .navbar-nav > li{
     padding-left: 30px;
-    padding-right: 30px
+    padding-right: 30px; 
 }
 

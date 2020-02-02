@@ -14,7 +14,7 @@
     
     <!-- Navigation Bar --> 
     <!-- <nav class = "navbar-expand-md navbar-light bg-darkd"> -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark navs">
         <div class="navbar-brand appName">
             <h1>Roulette Wheel</h1>
         </div>
@@ -31,12 +31,15 @@
             </ul>
     </nav>
 
-    <div class="text-center">
+    <div class="text-center button-wrapper">
         <div class = wheel>
             <img src="{% static 'roulette/img/wheel.jpg' %}" alt="Wheel Here">
         </div>
+        <div class = getLoc>
+            <button type="button" id="buttonLoc" class="btn btn-success">Get Location</button>
+        </div>
         <div class = startSpin>
-            <button type="button" class="btn btn-success">Spin Wheel</button>
+            <button type="button" id="buttonStr" class="btn btn-success">Spin Wheel</button>
         </div>
     </div>
 
@@ -47,10 +50,13 @@
     crossorigin="anonymous"> 
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtxN1bbjqYN2LE8fX5TLxF7wZpXmQMuvk&callback=initMap">
-    </script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtxN1bbjqYN2LE8fX5TLxF7wZpXmQMuvk&callback=initMap">
+    </script> 
     <script src="{% static 'js/location.js' %}"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{% static 'js/buttonStr.js' %}"></script>
+    <!-- <script  src ="{% static 'js/test.js' %}"></script>" -->
 </div>
+
 
 </html>
