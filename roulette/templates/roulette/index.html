@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" >
     <title>YelpERS</title>
+    <script>
+        var spin = document.getElementById("buttonStr")
+        var degrees = 20;
+        function rotationAnimation(object, speed){
+            var objectElement = document.getElementById(object); 
+            objectElement.style.transform = "rotate("+degrees+"deg)"; 
+            objectElement.style.webkitTransform = "rotate("+degrees+"deg)"; 
+            objectElement.style.msTransform = "rotate("+degrees+"deg)";
+            alert("test"); 
+        };
+    </script>
 </head>
 <body>
     
@@ -34,6 +45,8 @@
     <div class="text-center button-wrapper">
         <div class = wheel>
             <img src="{% static 'roulette/img/wheel.jpg' %}" alt="Wheel Here">
+            <script>rotationAnimation(src="{% static 'roulette/img/wheel.jpg' %});
+            </script>
         </div>
         <div class = getLoc>
             <button type="button" id="buttonLoc" class="btn btn-success">Get Location</button>
@@ -54,8 +67,8 @@
     </script> 
     <script src="{% static 'js/location.js' %}"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="{% static 'js/buttonStr.js' %}"></script>
-    <!-- <script  src ="{% static 'js/test.js' %}"></script>" -->
+    // // <script src="{% static 'js/spinning.js' %}"></script>
+    // <script  src ="{% static 'js/test.js' %}"></script>
 </div>
 
 
