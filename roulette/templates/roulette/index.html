@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" >
     <title>YelpERS</title>
-    <script>
+    <!-- <script>
         var spin = document.getElementById("buttonStr")
         var degrees = 20;
         function rotationAnimation(object, speed){
@@ -19,7 +19,7 @@
             objectElement.style.msTransform = "rotate("+degrees+"deg)";
             alert("test"); 
         };
-    </script>
+    </script> -->
 </head>
 <body>
     
@@ -43,10 +43,8 @@
     </nav>
 
     <div class="text-center button-wrapper">
-        <div class = wheel>
+        <div class = "wheel" id="wheel">
             <img src="{% static 'roulette/img/wheel.jpg' %}" alt="Wheel Here">
-            <script>rotationAnimation(src="{% static 'roulette/img/wheel.jpg' %});
-            </script>
         </div>
         <div class = getLoc>
             <button type="button" id="buttonLoc" class="btn btn-success">Get Location</button>
@@ -58,18 +56,15 @@
 
     <!-- JavaScript-->
     <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"> 
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"> 
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtxN1bbjqYN2LE8fX5TLxF7wZpXmQMuvk&callback=initMap">
     </script> 
     <script src="{% static 'js/location.js' %}"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    // // <script src="{% static 'js/spinning.js' %}"></script>
-    // <script  src ="{% static 'js/test.js' %}"></script>
+    <script src="{% static 'js/spinning.js' %}"></script>
 </div>
-
-
-</html>
+</html> 
