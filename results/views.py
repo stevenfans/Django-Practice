@@ -5,5 +5,7 @@ from django.template import loader
 
 #always pass in request
 def index(request):
-    #template = loader.get_template('main.html')
-    return render(request,"main.html")
+    template = loader.get_template('results/main.html')
+    context = {}
+    # return render(request,"main.html)
+    return HttpResponse(template.render(context, request)); 

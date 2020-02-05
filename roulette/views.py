@@ -12,7 +12,7 @@ from roulette.models import Location
 #always pass in request
 def index(request):
     template = loader.get_template('roulette/index.html')
-    # lat = float(request.GET.get('lat'))
+
     context = {}
     return HttpResponse(template.render(context,request))
 

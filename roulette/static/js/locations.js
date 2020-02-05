@@ -1,11 +1,5 @@
 var map, infoWindow;
 
-// $(document).ready(function(){
-//   //do something here once the document is loaded
-//   //$('#buttonLoc').on('click',initMap())
-//   //alert("Help I've fallen and I can't get up")
-// });
-
 function initMap() {
   console.log("before geolocation");
   // Try HTML5 geolocation.
@@ -15,10 +9,10 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      console.log("inside the navigator");
+      console.log("inside the vigator");
       // console.log(pos.lat);
       // console.log(pos.lng);
-      $(document).ready(function(){
+      $("#buttonLoc").click(function(){
         var lat = pos.lat; 
         var lon = pos.lng; 
         console.log("document is ready");

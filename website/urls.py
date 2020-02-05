@@ -23,6 +23,6 @@ urlpatterns = [
     path('results/',include('results.urls'))
 ]
 
-urlpatterns += [
-    path(r'(?P<path>.*)', include('roulette.urls'), name='home')
-]
+# urlpatterns += [
+#     path(r'(?P<path>.*)', include('roulette.urls'), name='home')
+# ]
