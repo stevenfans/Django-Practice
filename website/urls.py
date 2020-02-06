@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
+from roulette import views
 
 urlpatterns = [
+    path(r'',include('roulette.urls')),
     path('admin/', admin.site.urls),
     path('roulette/',include('roulette.urls')),
     path('results/',include('results.urls'))

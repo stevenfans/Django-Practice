@@ -4,6 +4,6 @@ from django.urls import path
 
 urlpatterns = [
     url(r'^$',views.index,name='index'),
-    url(r'process_loc', views.process_loc, name='process_loc')
-
+    url(r'process_loc', views.process_loc, name='process_loc'),
+    url(r'goToResults', views.goToResults, name='resultsgoto')
 ]

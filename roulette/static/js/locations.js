@@ -9,15 +9,15 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      console.log("inside the vigator");
+      console.log("inside the navigator");
       // console.log(pos.lat);
       // console.log(pos.lng);
       $("#buttonLoc").click(function(){
         var lat = pos.lat; 
         var lon = pos.lng; 
-        console.log("document is ready");
-        console.log(lat); 
-        console.log(lon);
+        //console.log("document is ready");
+        //console.log(lat); 
+        //console.log(lon);
 
         $.ajax({
           type: "GET",
