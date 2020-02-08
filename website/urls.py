@@ -13,18 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import include
+from django.conf.urls import url, include
 from django.contrib import admin
-from django.urls import path
+# from django.urls import path
 from roulette import views
+from results import views
+
 
 urlpatterns = [
-    path(r'',include('roulette.urls')),
-    path('admin/', admin.site.urls),
-    path('roulette/',include('roulette.urls')),
-    path('results/',include('results.urls'))
+    url(r'',include('roulette.urls')),
+    url(r'admin/', admin.site.urls),
+    url(r'^roulette/',include('roulette.urls')),
+    url(r'^results/',include('results.urls'))
 ]
-
-# urlpatterns += [
-#     path(r'(?P<path>.*)', include('roulette.urls'), name='home')
-# ]

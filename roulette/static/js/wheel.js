@@ -20,7 +20,7 @@
             }
             console.log("outside function");
             rotationAnimation();
-            setTimeout(alertDone, 000);
+            setTimeout(alertDone, 2000);
     });  
 console.log("test that spinning is connected");
 

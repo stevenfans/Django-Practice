@@ -36,5 +36,5 @@ def goToResults(request):
     print("test")
     template = loader.get_template('results/main.html')
     context = {}
-    return HttpResponseRedirect(reverse('results'))
-    #return render(request,'<h1>TEST</h1>')
+    # return HttpResponseRedirect(reverse('results:index'))
+    return HttpResponseRedirect('/results')
