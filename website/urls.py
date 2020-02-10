@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'',include('roulette.urls')),
     url(r'admin/', admin.site.urls),
     url(r'^roulette/',include('roulette.urls')),
-    url(r'^results/',include('results.urls'))
+    url(r'^results/',include('results.urls')),
 ]

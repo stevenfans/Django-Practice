@@ -29,6 +29,17 @@ def process_loc(request):
     #print(Location.objects.all())
     return HttpResponse(template.render(context,request))
 
+def reload(request):
+    print("asd;jfa;wjfe;oasidfaj;wejf;")
+    template=loader.get_template('roulette/check.html')
+    context={}
+    # return redirect('http://127.0.0.1:8000/roulette/asdf')
+    return redirect('asdf')
+
+def asdf(request):
+    print("asdf");
+    return HttpResponse("<h1>test</h1>")
+
 def testprint():
     test = Location
 
@@ -37,4 +48,4 @@ def goToResults(request):
     template = loader.get_template('results/main.html')
     context = {}
     # return HttpResponseRedirect(reverse('results:index'))
-    return HttpResponseRedirect('/results')
+    return HttpResponseRedirect('/results/')
