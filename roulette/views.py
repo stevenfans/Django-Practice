@@ -34,11 +34,14 @@ def reload(request):
     template=loader.get_template('roulette/check.html')
     context={}
     # return redirect('http://127.0.0.1:8000/roulette/asdf')
-    return redirect('asdf')
+    # return redirect('asdf')
+    return HttpResponseRedirect('/asdf/')
 
 def asdf(request):
     print("asdf");
-    return HttpResponse("<h1>test</h1>")
+    response = HttpResponse(); 
+    # return HttpResponse("<h1>test</h1>")
+    return HttpResponseRedirect('/thank-you/')
 
 def testprint():
     test = Location
