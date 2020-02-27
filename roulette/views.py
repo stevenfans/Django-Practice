@@ -4,12 +4,23 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import get_list_or_404
 from roulette.models import Location 
-
+from rest_framework.views import Response 
 
 # from rest_framework.views import APIView
 # from rest_framework import status
 
 # Create your views here.
+
+# # results
+# class foodView(APIView):
+
+#     # return of everything in data base for restraunts
+#     def get(self):
+#         pass
+    
+#     # read information or refresh restraunts 
+#     def post(self):
+#         pass
 
 #always pass in request
 def index(request):
@@ -47,7 +58,7 @@ def testprint():
     test = Location
 
 def goToResults(request):
-    print("test")
+    print("tasdfasdfafdest")
     template = loader.get_template('results/main.html')
     context = {}
     # return HttpResponseRedirect(reverse('results:index'))

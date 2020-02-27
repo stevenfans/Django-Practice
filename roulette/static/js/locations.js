@@ -16,8 +16,8 @@ function initMap() {
         var lat = pos.lat; 
         var lon = pos.lng; 
         //console.log("document is ready");
-        //console.log(lat); 
-        //console.log(lon);
+        console.log(lat); 
+        console.log(lon);
 
         $.ajax({
           type: "GET",
@@ -27,12 +27,12 @@ function initMap() {
             'lon': lon,
           }, 
           datatype: "json",
-          //success:function(){
-            //console.log("ajax was a success")
-          //},
-          // error:function(xhr,errmsg,err){
-          //   alert("Could not send URL to Django. Error: " + xhr.status + ": " + xhr.responseText);
-          // }
+          success:function(){
+            console.log("ajax was a success")
+          },
+          error:function(xhr,errmsg,err){
+            alert("Could not send URL to Django. Error: " + xhr.status + ": " + xhr.responseText);
+          }
         })
       });
       

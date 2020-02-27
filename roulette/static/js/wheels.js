@@ -20,9 +20,9 @@
             }
             console.log("outside function");
             rotationAnimation();
-            setTimeout(alertDone, 2000);
+            setTimeout(alertDone, 4000);
     });  
-console.log("test that spinning is connected");
+// console.log("test that spinning is connected");
 
 function alertDone(){
 
@@ -33,6 +33,7 @@ function alertDone(){
             url: "goToResults",
            success:function(){
             console.log("ajax was a success")
+            window.location.href = "http://127.0.0.1:8000/results/"
           },
           error:function(xhr,errmsg,err){
             alert("Could not send URL to Django. Error: " + xhr.status + ": " + xhr.responseText);

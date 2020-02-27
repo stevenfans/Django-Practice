@@ -18,11 +18,13 @@ from django.contrib import admin
 # from django.urls import path
 from roulette import views
 from results import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
 
 urlpatterns = [
     url(r'',include('roulette.urls')),
     url(r'admin/', admin.site.urls),
     url(r'^roulette/',include('roulette.urls')),
-    url(r'^results/',include('results.urls')),
+    # url(r'^results/',include('results.urls')),
+    url(r'^results/', views.foodView.as_view()),
 ]
