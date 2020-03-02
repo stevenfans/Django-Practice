@@ -35,9 +35,9 @@ def process_loc(request):
     lon = float(request.GET.get('lon'))
     print('latitdue is', lat)
     print('longitude is', lon)
-    #location = Location(latitude = lat, longitude = lon) 
-    #location.save()
-    #print(Location.objects.all())
+    location = Location(latitude = lat, longitude = lon) 
+    location.save()
+    print(Location.objects.all())
     return HttpResponse(template.render(context,request))
 
 def reload(request):
