@@ -10,7 +10,6 @@ from rest_framework.views import Response
 # from rest_framework import status
 
 
-
 # Create your views here.
 
 # # results
@@ -46,8 +45,6 @@ def reload(request):
     print("asd;jfa;wjfe;oasidfaj;wejf;")
     template=loader.get_template('roulette/check.html')
     context={}
-    # return redirect('http://127.0.0.1:8000/roulette/asdf')
-    # return redirect('asdf')
     return HttpResponseRedirect('/asdf/')
 
 def asdf(request):
