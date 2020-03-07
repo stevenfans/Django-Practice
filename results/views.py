@@ -46,7 +46,7 @@ def index(request):
 
 # results
 class foodView(APIView):
-    print("INSIDE HTE FOOD CLASS")
+
     # return of everything in data base for restraunts
     def get(self, request):
         api_key = 'z6bg8nnIj9vEeahsr6FRLJg-EYpp8WjqPApHnwpaerAnhzsSVu38SzJbOgwEMVMaJTHhoiiXjhKz5xKuUqbWvfunUrjv_c8Pjt3rIk_ZNpxEmck5l1-lji-PUeFpXXYx'
@@ -54,8 +54,12 @@ class foodView(APIView):
 
         url = 'https://api.yelp.com/v3/businesses/search'
 
+        L = Location.objects.get(pk=3)
         
-        params = {'term':'restraunts','latitude':'33.78','longitude':'-118.11'}
+        # get variables for lat and long from Location Database
+        latitude, longitude = L.latitude, L.longitude 
+
+        params = {'term':'restraunts','latitude':str(latitude),'longitude':str(longitude)}
 
         req = requests.get(url, params=params, headers=headers)
 
