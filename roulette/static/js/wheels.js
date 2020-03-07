@@ -1,6 +1,5 @@
     // var loop; 
     var degrees = 1; // start off with 0 degrees
-
         // this script just spins the wheel on spin click
         //TODO: Uncaught RangeError: Maximum call stack size exceeded
         $("#buttonStr").click(function(){
@@ -25,7 +24,6 @@
 // console.log("test that spinning is connected");
 
 function alertDone(){
-
     //once done we need to get the next url
     //$(document).ready(function(){
         $.ajax({

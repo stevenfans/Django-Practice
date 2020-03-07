@@ -13,10 +13,10 @@ from results.models import Restauraunt
 # Create your views here.
 
 #always pass in request
-def index(request):
-    template = loader.get_template('results/main.html')
-    context = {}
-    testResp(request)
+# def index(request):
+#     template = loader.get_template('results/main.html')
+#     context = {}
+    # testResp(request)
 
 # def testResp(request):
 #     print("a;sdoijf;aoweijawefj")
@@ -55,7 +55,7 @@ class foodView(APIView):
         url = 'https://api.yelp.com/v3/businesses/search'
 
         L = Location.objects.get(pk=3)
-        
+
         # get variables for lat and long from Location Database
         latitude, longitude = L.latitude, L.longitude 
 

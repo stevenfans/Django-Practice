@@ -6,23 +6,6 @@ from django.shortcuts import get_list_or_404
 from roulette.models import Location 
 from rest_framework.views import Response 
 
-# from rest_framework.views import APIView
-# from rest_framework import status
-
-
-# Create your views here.
-
-# # results
-# class foodView(APIView):
-
-#     # return of everything in data base for restraunts
-#     def get(self):
-#         pass
-    
-#     # read information or refresh restraunts 
-#     def post(self):
-#         pass
-
 #always pass in request
 def index(request):
     template = loader.get_template('roulette/index.html')
@@ -34,8 +17,6 @@ def process_loc(request):
     context={}
     lat = float(request.GET.get('lat'))
     lon = float(request.GET.get('lon'))
-    print('latitdue is', lat)
-    print('longitude is', lon)
     location = Location(latitude = lat, longitude = lon) 
     location.save()
     print(Location.objects.all())
@@ -48,7 +29,6 @@ def reload(request):
 
 def asdf(request):
     response = HttpResponse(); 
-    # return HttpResponse("<h1>test</h1>")
     return HttpResponseRedirect('/thank-you/')
 
 def testprint():
