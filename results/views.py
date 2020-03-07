@@ -3,10 +3,11 @@ from django.http import HttpResponse
 from django.template import loader
 from rest_framework.views import Response, APIView
 from django.shortcuts import get_list_or_404
-
 import requests
 import json
 from django.http import JsonResponse
+from roulette.models import Location
+from results.models import Restauraunt
 
 
 # Create your views here.
@@ -15,41 +16,45 @@ from django.http import JsonResponse
 def index(request):
     template = loader.get_template('results/main.html')
     context = {}
-    # return HttpResponse('<h1>TEST</h1>4')
-    # return HttpResponse(template.render(context, request)); 
     testResp(request)
 
-def testResp(request):
-    api_key = 'z6bg8nnIj9vEeahsr6FRLJg-EYpp8WjqPApHnwpaerAnhzsSVu38SzJbOgwEMVMaJTHhoiiXjhKz5xKuUqbWvfunUrjv_c8Pjt3rIk_ZNpxEmck5l1-lji-PUeFpXXYx'
-    headers = {'Authorization': 'Bearer %s' % api_key}
+# def testResp(request):
+#     print("a;sdoijf;aoweijawefj")
+#     api_key = 'z6bg8nnIj9vEeahsr6FRLJg-EYpp8WjqPApHnwpaerAnhzsSVu38SzJbOgwEMVMaJTHhoiiXjhKz5xKuUqbWvfunUrjv_c8Pjt3rIk_ZNpxEmck5l1-lji-PUeFpXXYx'
+#     headers = {'Authorization': 'Bearer %s' % api_key}
+#     url = 'https://api.yelp.com/v3/businesses/search'
 
-    url = 'https://api.yelp.com/v3/businesses/search'
-    params = {'term':'restraunts','latitude':'33.78','longitude':'-118.11'}
+#     lat = Location.objects.get(pk=3)
+#     print("QUERTY OF LOCATION DB" + "asdf")
 
-    req = requests.get(url, params=params, headers=headers)
+#     params = {'term':'restraunts','latitude':str(lat),'longitude':'-118.11'}
 
-    parsed = json.loads(req.text)
+#     req = requests.get(url, params=params, headers=headers)
 
-    businesses = parsed["businesses"]#json format
+#     parsed = json.loads(req.text)
+
+#     businesses = parsed["businesses"]#json format
     
-    for item in businesses: 
-        print("ITEM IS "+str(item)+ "\n")
-        print("Restaurant Name: "+str(item['name'])+"\n")
-        print("Rating is: "+ str(item['rating'])+ "\n")
+#     for item in businesses: 
+#         print("ITEM IS "+str(item)+ "\n")
+#         print("Restaurant Name: "+str(item['name'])+"\n")
+#         print("Rating is: "+ str(item['rating'])+ "\n")
 
-    # return HttpResponseObject(businesses, safe=False)
-    return Response(businesses)
+#     # return HttpResponseObject(businesses, safe=False)
+#     return Response(businesses)
 
 
 # results
 class foodView(APIView):
-
+    print("INSIDE HTE FOOD CLASS")
     # return of everything in data base for restraunts
     def get(self, request):
         api_key = 'z6bg8nnIj9vEeahsr6FRLJg-EYpp8WjqPApHnwpaerAnhzsSVu38SzJbOgwEMVMaJTHhoiiXjhKz5xKuUqbWvfunUrjv_c8Pjt3rIk_ZNpxEmck5l1-lji-PUeFpXXYx'
         headers = {'Authorization': 'Bearer %s' % api_key}
 
         url = 'https://api.yelp.com/v3/businesses/search'
+
+        
         params = {'term':'restraunts','latitude':'33.78','longitude':'-118.11'}
 
         req = requests.get(url, params=params, headers=headers)
