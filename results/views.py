@@ -54,7 +54,9 @@ class foodView(APIView):
 
         url = 'https://api.yelp.com/v3/businesses/search'
 
-        L = Location.objects.get(pk=3)
+        # use location from latest entry, 
+        # TODO: either update entries or need to connect databases to users
+        L = Location.objects.latest('latitude')
 
         # get variables for lat and long from Location Database
         latitude, longitude = L.latitude, L.longitude 
