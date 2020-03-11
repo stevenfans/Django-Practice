@@ -17,7 +17,11 @@ def process_loc(request):
     context={}
     lat = float(request.GET.get('lat'))
     lon = float(request.GET.get('lon'))
-    location = Location(latitude = lat, longitude = lon) 
+
+    Location.objects.all().delete()
+    location = Location() 
+    location.latitude = lat
+    location.longitude = lon
     location.save()
     print(Location.objects.all())
     return HttpResponse(template.render(context,request))

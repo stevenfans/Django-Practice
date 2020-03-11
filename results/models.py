@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Restauraunt(models.Model):
+    location_id = models.DecimalField(max_digits=15,decimal_places=0)
     name = models.CharField(max_length=30)
     rating = models.DecimalField(max_digits=10, decimal_places=3)
     phone_num = models.CharField(max_length=10)

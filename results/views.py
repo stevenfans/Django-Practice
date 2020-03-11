@@ -9,9 +9,8 @@ from django.http import JsonResponse
 from roulette.models import Location
 from results.models import Restauraunt
 
-
-# Create your views here.
-
+# TODO: NEED TO CREATE FORMS FOR FILTERS LATER
+# TODO: TAKE JSON RESPONSE AND PUT INTO SQL DBs
 #always pass in request
 # def index(request):
 #     template = loader.get_template('results/main.html')
@@ -62,17 +61,20 @@ class foodView(APIView):
         latitude, longitude = L.latitude, L.longitude 
 
         params = {'term':'restraunts','latitude':str(latitude),'longitude':str(longitude)}
-
         req = requests.get(url, params=params, headers=headers)
-
         parsed = json.loads(req.text)
-
         businesses = parsed["businesses"]#json format
-        
+
         for item in businesses: 
+            restauraunt = Restauraunt()
+            name =      str(item['name'])
+            rating =    str(item['rating'])
+            phone_num = str(item['phone'])
+            test =      str(item['price'])
             print("ITEM IS "+str(item)+ "\n")
-            print("Restaurant Name: "+str(item['name'])+"\n")
-            print("Rating is: "+ str(item['rating'])+ "\n")
+            print("Restaurant Name: "+name+"\n")
+            print("Rating is: "+ rating+ "\n")
+
 
         # return HttpResponseObject(businesses, safe=False)
         return Response(businesses)
