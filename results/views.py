@@ -65,15 +65,27 @@ class foodView(APIView):
         parsed = json.loads(req.text)
         businesses = parsed["businesses"]#json format
 
+
         for item in businesses: 
             restauraunt = Restauraunt()
             name =      str(item['name'])
             rating =    str(item['rating'])
             phone_num = str(item['phone'])
-            test =      str(item['price'])
-            print("ITEM IS "+str(item)+ "\n")
-            print("Restaurant Name: "+name+"\n")
-            print("Rating is: "+ rating+ "\n")
+            
+            test = str(item["price"]) if 'price' in item  else "N/A"
+
+
+            print(name + '\n')
+            print(test + '\n')
+            restauraunt.name = name
+            restauraunt.rating = rating
+            restauraunt.phone_num = phone_num
+
+            restauraunt.save()
+
+            # print("ITEM IS "+str(item)+ "\n")
+            # print("Restaurant Name: "+name+"\n")
+            # print("Rating is: "+ rating+ "\n")
 
 
         # return HttpResponseObject(businesses, safe=False)
