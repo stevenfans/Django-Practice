@@ -65,22 +65,24 @@ class foodView(APIView):
         parsed = json.loads(req.text)
         businesses = parsed["businesses"]#json format
 
-
+        prim_key = L.pk
         for item in businesses: 
             restauraunt = Restauraunt()
             name =      str(item['name'])
             rating =    str(item['rating'])
             phone_num = str(item['phone'])
             
-            test = str(item["price"]) if 'price' in item  else "N/A"
+            price = str(item["price"]) if 'price' in item  else "N/A"
 
 
-            print(name + '\n')
-            print(test + '\n')
+            print(price + '\n')
             restauraunt.name = name
             restauraunt.rating = rating
             restauraunt.phone_num = phone_num
+            restauraunt.price = price
+            restauraunt.foreign = L
 
+            # print("KEY IS:" + str(restauraunt.for.id))
             restauraunt.save()
 
             # print("ITEM IS "+str(item)+ "\n")
