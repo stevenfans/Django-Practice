@@ -21,7 +21,6 @@
             rotationAnimation();
             setTimeout(alertDone, 4000);
     });  
-// console.log("test that spinning is connected");
 
 function alertDone(){
     //once done we need to get the next url
@@ -37,5 +36,4 @@ function alertDone(){
             alert("Could not send URL to Django. Error: " + xhr.status + ": " + xhr.responseText);
           }
         })
-   // })
 }

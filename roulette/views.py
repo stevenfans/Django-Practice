@@ -12,7 +12,7 @@ def index(request):
     context = {}
     return HttpResponse(template.render(context,request))
 
-def process_loc(request):
+def process_loc(request): #stores new lat and long in models
     template = loader.get_template('roulette/index.html')
     context={}
     lat = float(request.GET.get('lat'))
@@ -38,8 +38,14 @@ def asdf(request):
 def testprint():
     test = Location
 
+def spinWheel(request):
+    template = loader.get_template('results/main.html')
+    context = {}
+    return HttpResponseRedirect('/results/')
+
 def goToResults(request):
     template = loader.get_template('results/main.html')
     context = {}
+    # process_loc(request)
     # return HttpResponseRedirect(reverse('results:index'))
     return HttpResponseRedirect('/results/')
