@@ -10,7 +10,6 @@ from roulette.models import Location
 from results.models import Restauraunt
 
 # TODO: NEED TO CREATE FORMS FOR FILTERS LATER
-# TODO: TAKE JSON RESPONSE AND PUT INTO SQL DBs
 #always pass in request
 # def index(request):
 #     template = loader.get_template('results/main.html')
@@ -65,7 +64,6 @@ class foodView(APIView):
         parsed = json.loads(req.text)
         businesses = parsed["businesses"]#json format
 
-        prim_key = L.pk
         for item in businesses: 
             restauraunt = Restauraunt()
             name =      str(item['name'])
@@ -82,7 +80,6 @@ class foodView(APIView):
             restauraunt.price = price
             restauraunt.foreign = L
 
-            # print("KEY IS:" + str(restauraunt.for.id))
             restauraunt.save()
 
             # print("ITEM IS "+str(item)+ "\n")
@@ -90,7 +87,6 @@ class foodView(APIView):
             # print("Rating is: "+ rating+ "\n")
 
 
-        # return HttpResponseObject(businesses, safe=False)
         return Response(businesses)
     
     # read information or refresh restraunts 
