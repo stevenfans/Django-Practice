@@ -9,7 +9,6 @@ class Restauraunt(models.Model):
     phone_num = models.CharField(max_length=20)
     price = models.CharField(max_length=20)
 
-
     # string representation of model
     def __str__(self):
-        return self.title
+        return self.name

@@ -35,16 +35,26 @@
         <div class = "wheel" id="wheel">
             <img src="{% static 'roulette/img/wheel.jpg' %}" alt="Wheel Here">
         </div>
-        <div class = getLoc>
+        <!-- <div class = getLoc>
             <button type="button" id="buttonLoc" class="btn btn-success">Get Location</button>
-        </div>
+        </div> -->
         <div class = startSpin>
             <button type="button" id="buttonStr" class="btn btn-success">Spin Wheel</button>
         </div>
-        <span class="reload">
-           <button type="button" id="buttonRel" class="btn btn-danger">Reload</button> 
-        </span> 
+        <!-- <span class="reload"> -->
+           <!-- <!-- <button type="button" id="buttonRel" class="btn btn-danger">Reload</button>  --> -->
+        <!-- </span>  -->
     </div>
+
+    <!-- FORM: User Selectable Parameters -->
+    <form action="">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" class="form-control">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="passwrd" class="form-control">
+        
+    </form>
+
 
     <!-- JavaScript-->
     <script

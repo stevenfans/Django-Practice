@@ -14,8 +14,7 @@ function initMap() {
         lng: position.coords.longitude
       };
       console.log("inside the navigator");
-      // console.log(pos.lat);
-      // console.log(pos.lng);
+
       $("#buttonStr").click(function(){
         var lat = pos.lat; 
         var lon = pos.lng; 
@@ -54,8 +53,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-    // var loop; 
-        // this script just spins the wheel on spin click
 function spin(){
     var wheel = document.getElementById("wheel"); 
     console.log("inside funcn"); 
