@@ -9,9 +9,28 @@ from . import forms
 
 #always pass in request
 def index(request):
-    template = loader.get_template('roulette/index.html')
-    context = {}
-    return HttpResponse(template.render(context,request))
+    # template = loader.get_template('roulette/index.html')
+    # context = {}
+    # return HttpResponse(template.render(context,request))
+    form = forms.Filter()
+    
+    if request.method=='POST':
+        form=forms.Filter(request.POST)
+        
+        if form.is_valid():
+        # Do SOMETHING WITH IT  
+            print("Validation Success")
+            print("Rating: "+form.cleaned_data['rating'])
+            print('Price: '+form.cleaned_data['price'])
+            print("Radius: "+form.cleaned_data['radius'])
+    
+    # return render(request,'results/main.html',{'form':form})
+    # template=loader.get(template('results/main.html'))
+    return render(request,'roulette/index.html',{'form':form})
+    
+    # return render(request,'results/main.html',{'form':form})
+    # template=loader.get(template('results/main.html'))
+
 
 def process_loc(request): #stores new lat and long in models
     template = loader.get_template('roulette/index.html')
