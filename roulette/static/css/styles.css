@@ -35,3 +35,9 @@ h1{
     padding-right: 30px; 
 }
 
+/* Form */
+.filter label{
+    font-size:1.5em;
+    color: white;
+}
+
