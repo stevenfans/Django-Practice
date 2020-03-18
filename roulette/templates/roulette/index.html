@@ -48,7 +48,7 @@
 
     <!-- FORM: User Selectable Parameters -->
     <form action="" class="form filter container col-md-3 col-offset-3 justify-content-center align-items">
-        <label for="rating">Rating</label>
+        <!-- <label for="rating">Rating</label>
         <select name="rating" id="rating" class="form-control">
             <option value="1star">1 STAR</option>
             <option value="2star">2 STAR</option>
@@ -68,7 +68,13 @@
             <option value="10">10 miles</option>
             <option value="15">15 miles</option>
             <option value="20">20 miles</option>
-        </select>
+        </select> -->
+        
+        <form class="" action="" method="POST">
+            {{form}}
+            {% csrf_token %}
+        </form>
+
     </form>
 
 

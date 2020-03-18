@@ -33,11 +33,11 @@ def reload(request):
     return HttpResponseRedirect('/asdf/')
 
 def asdf(request):
-    response = HttpResponse(); 
-    return HttpResponseRedirect('/thank-you/')
-
-# def testprint():
-#     test = Location
+    form = forms.Filter()
+    
+    # return render(request,'results/main.html',{'form':form})
+    # template=loader.get(template('results/main.html'))
+    return render(request,'roulette/index.html',{'form':form})
 
 def spinWheel(request):
     template = loader.get_template('results/main.html')
@@ -52,6 +52,8 @@ def goToResults(request):
     return HttpResponseRedirect('/results/')
 
 def form_page(request):
-    form = forms.FormName()
+    form = forms.Filter()
+    
     # return render(request,'results/main.html',{'form':form})
-    template=loader.get(template('results/main.html'))
+    # template=loader.get(template('results/main.html'))
+    return render(request,'results/main.html',{'form':form})
