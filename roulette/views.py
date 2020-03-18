@@ -5,6 +5,7 @@ from django.template import loader
 from django.shortcuts import get_list_or_404
 from roulette.models import Location 
 from rest_framework.views import Response 
+from . import forms
 
 #always pass in request
 def index(request):
@@ -35,8 +36,8 @@ def asdf(request):
     response = HttpResponse(); 
     return HttpResponseRedirect('/thank-you/')
 
-def testprint():
-    test = Location
+# def testprint():
+#     test = Location
 
 def spinWheel(request):
     template = loader.get_template('results/main.html')
@@ -49,3 +50,8 @@ def goToResults(request):
     # process_loc(request)
     # return HttpResponseRedirect(reverse('results:index'))
     return HttpResponseRedirect('/results/')
+
+def form_page(request):
+    form = forms.FormName()
+    # return render(request,'results/main.html',{'form':form})
+    template=loader.get(template('results/main.html'))

@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'admin/', admin.site.urls),
     url(r'^roulette/',include('roulette.urls')),
     # url(r'^results/',include('results.urls')),
-    url(r'^results/', views.foodView.as_view()),
+    # url(r'^results/', views.foodView.as_view()),
+    url(r'^results/', include('results.urls')),
 ]

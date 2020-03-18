@@ -9,6 +9,9 @@ from django.http import JsonResponse
 from roulette.models import Location
 from results.models import Restauraunt
 
+# delte this later
+from roulette.forms import FormName
+
 # TODO: NEED TO CREATE FORMS FOR FILTERS LATER
 #always pass in request
 # def index(request):
@@ -92,3 +95,20 @@ class foodView(APIView):
     # read information or refresh restraunts 
     def post(self, request):
         pass
+
+
+def test(request):
+    form = FormName
+    # return HttpResponse(template.render(context,request))
+
+    if request.method=='POST':
+        form = FormName(request.POST)
+
+        if form.is_valid():
+            # DO SOMETHING WITH IT
+            print("Validation Success")
+            print("Name: "+form.cleaned_data['name'])
+            print('Email: '+form.cleaned_data['email'])
+            print("Text: "+form.cleaned_data['text'])
+
+    return render(request,'results/main.html',{'form':form})
