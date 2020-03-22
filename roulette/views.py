@@ -14,15 +14,15 @@ def index(request):
     # return HttpResponse(template.render(context,request))
     form = forms.Filter()
     
-    if request.method=='POST':
-        form=forms.Filter(request.POST)
+    # if request.method=='POST':
+    #     form=forms.Filter(request.POST)
         
-        if form.is_valid():
-        # Do SOMETHING WITH IT  
-            print("Validation Success")
-            print("Rating: "+form.cleaned_data['rating'])
-            print('Price: '+form.cleaned_data['price'])
-            print("Radius: "+form.cleaned_data['radius'])
+    #     if form.is_valid():
+    #     # Do SOMETHING WITH IT  
+    #         print("Validation Success")
+    #         print("Rating: "+form.cleaned_data['rating'])
+    #         print('Price: '+form.cleaned_data['price'])
+    #         print("Radius: "+form.cleaned_data['radius'])
     
     # return render(request,'results/main.html',{'form':form})
     # template=loader.get(template('results/main.html'))
