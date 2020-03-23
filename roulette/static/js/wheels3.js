@@ -4,7 +4,7 @@
         //TODO: Uncaught RangeError: Maximum call stack size exceeded
         $("#buttonSub").click(function(){
             console.log("test");
-            setTimeout(test(),1000000);
+                setTimeout(test(),1000);
             // var wheel = document.getElementById("wheel"); 
             // function rotationAnimation(){
             //     wheel.style.transform = "rotate("+degrees+"deg)"; 
