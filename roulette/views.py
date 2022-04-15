@@ -51,7 +51,7 @@ def reload(request):
     context={}
     return HttpResponseRedirect('/asdf/')
 
-def asdf(request):
+def asdf(request): #not being used right now
     form = forms.Filter()
     
     # return render(request,'results/main.html',{'form':form})
@@ -59,12 +59,12 @@ def asdf(request):
     return render(request,'roulette/index.html',{'form':form})
 
 def spinWheel(request):
-    template = loader.get_template('results/main.html')
+    # template = loader.get_template('results/main.html')
     context = {}
     return HttpResponseRedirect('/results/')
 
 def goToResults(request):
-    template = loader.get_template('results/main.html')
+    # template = loader.get_template('results/main.html')
     context = {}
     # process_loc(request)
     # return HttpResponseRedirect(reverse('results:index'))

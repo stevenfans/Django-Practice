@@ -1,28 +1,10 @@
-    // var loop; 
+    // test connection 
     var degrees = 1; // start off with 0 degrees
         // this script just spins the wheel on spin click
         //TODO: Uncaught RangeError: Maximum call stack size exceeded
-        $("#buttonSub").click(function(){
+        $("#button-test").click(function(){
             console.log("test");
                 setTimeout(test(),1000);
-            // var wheel = document.getElementById("wheel"); 
-            // function rotationAnimation(){
-            //     wheel.style.transform = "rotate("+degrees+"deg)"; 
-            //     wheel.style.webkitTransform = "rotate("+degrees+"deg)"; 
-            //     wheel.style.msTransform = "rotate("+degrees+"deg)"; 
-                
-            //     setTimeout(rotationAnimation,0.25);
-
-            //     degrees++; 
-            //     if(degrees>359){
-            //         degrees == 1; 
-            //     }
-            // }
-            // // console.log("outside function");
-            // rotationAnimation();
-            // setTimeout(alertDone, 4000);
-
-            // TODO: NEED TO FIX FORM ANIMATION
     });  
 
 function test(){

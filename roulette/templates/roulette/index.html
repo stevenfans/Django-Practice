@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' ?{% now 'U' %} %}" >
     <title>YelpERS</title>
 </head>
 <body>
@@ -36,41 +36,14 @@
             <img src="{% static 'roulette/img/wheel.jpg' %}" alt="Wheel Here">
         </div>
 
-        <div class = startSpin>
-            <button type="button" id="buttonStr" class="btn btn-success">Spin Wheel</button>
-        </div>
+        <button type="button" id="buttonStr" class="btn btn-success">Spin Wheel</button>
     </div>
 
     <!-- FORM: User Selectable Parameters -->
-    <form action="" class="form filter container col-md-3 col-offset-3 justify-content-center align-items" method='POST' id="parameters">
-        <!-- <label for="rating">Rating</label>
-        <select name="rating" id="rating" class="form-control">
-            <option value="1star">1 STAR</option>
-            <option value="2star">2 STAR</option>
-            <option value="3star">3 STAR</option>
-            <option value="4star">4 STAR</option>
-            <option value="5star">5 STAR</option>
-        </select>
-        <label for="price">Price</label>
-        <select name="price" id="price" class="form-control">
-            <option value="$">$</option>
-            <option value="$$">$$</option>
-            <option value="$$$">$$$</option>
-        </select>
-        <label for="radius">Radius</label>
-        <select name="radius" id="radius" class="form-control">
-            <option value="5">5 miles</option>
-            <option value="10">10 miles</option>
-            <option value="15">15 miles</option>
-            <option value="20">20 miles</option>
-        </select> -->
-        <!-- <form class="" action="" method="POST"> -->
-            <!-- <input type='submit' id='buttonStr' class='btn btn-success' value='Spin Wheel'> -->
-            <button type='submit' id="buttonSub" class="btn btn-success">Spin Wheel</button>
-            {{form.as_p}}
-            {% csrf_token %}
-        <!-- </form> -->
-
+    <form action="" class="form filter container col-md-3 cazol-offset-3 justify-content-center align-items" method='POST' id="parameters">
+        <!-- <button type='submit' id="button-test" class="btn btn-success">Spin Wheel to Test Connection </button> -->
+        {{form.as_p}}
+        {% csrf_token %}
     </form>
 
 
@@ -86,7 +59,7 @@
     <!-- <script src="{% static 'js/locations.js' %}"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{% static 'js/spin.js' %}"></script>
-    <script src="{% static 'js/wheels3.js' %}"></script>
+    <!-- <script src="{% static 'js/wheels3.js' %}"></script> -->
     <!-- <script src="{%static 'js/test.js' %}"></script> -->
 </div>
 </html> 
